@@ -13,7 +13,7 @@ hr,
 ul,
 h2,
 h3,
-h4 {
+h4, p {
 	margin: 0;
 	padding: 0;
 }
@@ -26,6 +26,11 @@ body {
 a {
 	text-decoration: none;
 	color: var(--baseFontColor);
+}
+
+.container {
+	max-width: 1150px;
+	margin: auto;
 }
 
 /* HEADER */
@@ -44,6 +49,8 @@ header {
 .header-logo {
 	display: flex;
 	align-items: center;
+	min-width: 167px;
+	margin-right: 10px;
 }
 
 .company-name {
@@ -64,11 +71,14 @@ header {
 }
 
 .btn {
+	display: inline-block;
 	padding: 14px 24px;
 	border: 1px solid var(--baseGreen);
 	border-radius: 50px;
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
+	white-space: nowrap;
+	text-align: center;
 }
 
 .btn:hover {
@@ -97,16 +107,23 @@ header {
 	color: #ed6d11;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+	.header-discr {
+		display: none;
+	}
+}
+
+@media (max-width: 767px){
+	.header-discr, .header-adress {
+		display: none;
+	}
+}
+
 /* MAIN SECTION PRODUCT */
 
 .first-screen {
 	display: flex;
 	padding: 44px 20px 70px;
-}
-
-.container {
-	max-width: 1150px;
-	margin: auto;
 }
 
 
@@ -136,7 +153,7 @@ header {
 
 .prod-selling {
 	position: relative;
-	flex-basis: 825px;
+	flex-basis: calc(100% - 255px);
 	padding: 50px 60px;
 	color: #fff;
 	background-image: url('./images/selling.png');
@@ -173,25 +190,38 @@ header {
 	background-color: var(--baseGreen);
 }
 
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.prod-selling h2 {
+		font-size: 32px;
+	}
+}
+
+@media (max-width: 767px) {
+	.prod-selling h2 {
+		font-size: 32px;
+	}
+}
+
+
 .card-box {
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 1110px;
+	justify-content: space-between;
+	max-width: 1150px;
 	margin: auto;
-	column-gap: 30px;
+	padding: 0 20px;
+
 }
 
 .card-cont {
 	position: relative;
 	width: calc((100% - 30px) / 2);
-	height: 200px;
 	background-color: #FFFEFE;
 	border: 1px solid #E9E9E9;
 	overflow: hidden;
 	margin-bottom: 32px;
-	padding-top: 70px;
-	padding-bottom: 70px;
-	padding-left: 46px;
+	padding: 76px 40px;
 }
 
 .card-cont:hover {
@@ -211,17 +241,57 @@ header {
 	right: 0;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+	.card-box {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.card-cont {
+		padding: 56px 24px;
+	}
+
+	.card-img {
+		width: 220px;
+	}
+}
+
+@media (max-width: 767px){
+	.card-cont {
+		padding-left: 72px;
+		width: 100%;
+	}
+
+	.first-screen {
+		flex-direction: column;
+	}
+
+	.prod-list, .prod-selling {
+		width: 100%;
+	}
+
+	.prod-list {
+		display: inline-flex;
+		justify-content: space-between;
+	}
+
+	.prod-selling {
+		flex-basis: initial;
+	}
+}
+
+
 /* ПОПУЛЯРНЫЕ ТОВАРЫ */
 
 .most-popular {
 	display: flex;
-	margin: auto;
 	flex-direction: column;
-	width: 1110px;
-	margin-bottom: 100px;
+	max-width: 1150px;
+	padding: 0 20px;
+
 }
 
-.header-popular {
+.popular-heding {
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 38px;
@@ -231,16 +301,22 @@ header {
 
 .popular-prod-box {
 	display: flex;
+	justify-content: space-between;
 	flex-wrap: wrap;
-	row-gap: 32px;
-	column-gap: 30px;
+
+
 }
 
 .popular-item {
 	display: flex;
 	flex-direction: column;
-	max-width: 350px;
+	flex-basis: calc((100% - 60px)/3);
 	background-color: #fff;
+	margin-bottom: 32px;
+}
+
+.popular-item {
+	max-width: 330px;
 }
 
 .popular-item:hover {
@@ -248,7 +324,7 @@ header {
 }
 
 .info-box {
-	padding: 12px 25px 0;
+	padding: 12px 16px 0;
 }
 
 
@@ -284,6 +360,7 @@ header {
 	letter-spacing: 0em;
 	text-align: left;
 	color: #ed6d11;
+	margin-right: 20px;
 
 }
 
@@ -316,6 +393,28 @@ header {
 .more:hover svg {
 	fill: #fff;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.price-order {
+		display: block;
+	}
+	.price {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	.popular-item {
+		flex-basis: calc((100% - 30px)/2);
+		max-width: inherit;
+	}
+
+	.price {
+		margin-right: 20px;
+	}
+}
+
+/* КОНЕЦ ПОПУЛЯРНЫЕ ТОВАРЫ */
 
 /* O HAC */
 
@@ -374,9 +473,36 @@ header {
 	fill: var(--baseGreen);
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+	.about-img {
+		max-width: 300px;
+		object-fit: cover;
+	}
+}
+@media (max-width: 767px) {
+	.about {
+		padding: 30px;
+		margin-bottom: 40px;
+	}
+	
+	.about-img {
+		display: none;
+	}
+	.about-info {
+		max-width: inherit;
+		margin-right: 0;
+	}
+}
+
+/* КОНЕЦ  ABOUT */
+
+
+
+
+/* MAP КАРТА */
 
 .contact h3 {
-	margin-left: 85px;
+	margin-left: 20px;
 	margin-bottom: 48px;
 	font-size: 32px;
 	font-weight: 600;
@@ -388,10 +514,10 @@ header {
 }
 
 .contact-info {
+	position: absolute;
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
-	position: absolute;
 	padding: 32px 64px 36px 44px;
 	background-color: #fff;
 	color: var(--baseFontColor);
@@ -412,11 +538,30 @@ header {
 	font-size: 12px;
 }
 
-.contact-info a {
+.contact-item {
 	margin-bottom: 20px;
 }
 
-/* БЛОК КОНСУЛЬТАЦИЙ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+@media (max-width: 767px) {
+	.contact-info {
+		position: static;
+	}
+	
+	.contact-group {
+		display: flex;
+		justify-content: space-between;
+	}
+
+}
+
+/* КОНЕЦ КАРТЫ */
+
+/* БЛОК КОНСУЛЬТАЦИЙ ФОРМА */
 
 .consultation {
 	padding: 28px 20px;
@@ -453,6 +598,7 @@ header {
 
 .consultation-form input,
 textarea {
+	width: 100%;
 	font-size: 12px;
 	font-weight: 300;
 	line-height: 14px;
@@ -467,10 +613,14 @@ textarea {
 	margin-right: 12px;
 }
 
+.input-flex-box {
+	display: flex;
+}
+
 .input-name,
 .input-tel {
 	height: 40px;
-	width: 233px;
+	flex-basis: calc((100% - 12px)/2);
 	margin-bottom: 12px;
 
 }
@@ -480,6 +630,13 @@ textarea {
 	width: 100%;
 	height: 64px;
 	margin-bottom: 60px;
+}
+
+.img-consultation {
+	max-width: 550px;
+	min-width: 200px;
+	flex-basis: calc((100% - 10px)/2);
+	margin-left: 20px; 
 }
 
 .underline {
@@ -495,9 +652,9 @@ textarea {
 	font-size: 12px;
 	font-weight: 300;
 	line-height: 18px;
+}
+.personal-box .underline {
 	cursor: pointer;
-
-
 }
 
 .form-btn {
@@ -513,6 +670,29 @@ textarea {
 	cursor: pointer;
 }
 
+@media (min-width: 1024px) and (max-width: 1080px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+@media (max-width: 767px) {
+	.consultation-cont {
+		margin-top: 0;
+	}
+	.img-consultation {
+		display: none;
+	}
+	
+	.form-cont {
+		margin: auto;
+	}
+}
+
+/* КОНЕЦ ФОРМЫ */
+
 
 /* FOOTER */
 
@@ -522,16 +702,30 @@ footer {
 }
 
 footer .container {
-	max-width: 1150;
 	padding: 44px 20px;
+}
+
+.footer-list-logo-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
 }
 
 .footer-list {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	list-style-type: none;
-	margin-bottom: 40px;
+	width: calc(100% - 167px);
+	
+}
+
+
+.li-flex-cont {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	width: calc(100% /2);
 }
 
 .footer-list a,
@@ -547,9 +741,12 @@ footer a:hover {
 .footer-second {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .footer-info {
+	display: flex;
+	justify-content: space-between;
 	font-size: 12px;
 	font-weight: 300;
 	line-height: 14px;
@@ -561,4 +758,70 @@ footer a:hover {
 
 .footer-tel {
 	margin-right: 24px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.copyright {
+		margin-right: 10px;
+	}
+}
+
+@media (max-width: 767px) {
+	.footer-list {
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.li-flex-cont {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+	.cont-1 {
+		margin-bottom: 15px;
+	}
+
+	.footer-second {
+		justify-content: space-evenly;
+	}
+
+	.footer-info {
+		flex-direction: column;
+	}
+
+
+	.copyright {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+
+	.footer-contact {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer-tel {
+		margin-right: 0;
+		margin-bottom: 20px;
+
+	}
+}
+
+@media (max-width: 639px) {
+	.footer-list li {
+		text-align: center;
+		margin-bottom: 4px;
+	}
+	.footer-list {
+		flex-direction:row
+	}
+
+	.li-flex-cont {
+		flex-direction: column;
+	}
+	.cont-1 {
+		margin-bottom: 0;
+	}
 }
