@@ -20,14 +20,16 @@
 						fill="#62AF33" />
 					<path d="M13.8282 8.12438L12.5282 5.29663L9.69903 6.59725L10.999 9.425L13.8282 8.12438Z" fill="#ED6D11" />
 				</svg>
-				<h1 class="company-name "> ТАРА-НН </h1>
+				<p class="company-name "> ТАРА-НН </p>
 			</a>
 
 			<p class="header-discr"> Производство и продажа деревянной тары </p>
 			<a href="https://yandex.by/maps/-/COVWF4-V" class="link header-adress" target="_blank"> г. Нижний Новгород </br>
 				ул. Строкина, д.5А</a>
 			<a href="tel:78319998877" class="phone-number link"> +7 (831) 999-88-77 </a>
-			<a href="" class="btn"> Напишите нам </a>
+			<div class="burger">
+			</div>
+			<a href="#consultation" class="btn"> Напишите нам </a>
 		</div>
 		<hr>
 		<nav class="header-nav container">
@@ -51,7 +53,7 @@
 				<li><a href=""> Паллетные борта </a></li>
 			</ul>
 			<div class="prod-selling">
-				<h2> Производство и продажа деревянной тары </h2>
+				<h1> Производство и продажа деревянной тары </h1>
 				<span> в Нижнем Новгороде и области </span>
 				<a href="" class="btn"> Заказать тару </a>
 			</div>
@@ -233,23 +235,24 @@
 			<img src="./images/about-tara.png" alt="about" class="about-img">
 		</section>
 
-		<!-- <section class="contact map">
+		<section class="contact map">
 			<div class="container">
-				<h3> Контакты </h3>
+				<h3 class="map-heading"> Контакты </h3>
 			</div>
 			
 			<div class="contact-info">
+				<h3 class="map-heading__low"> Контакты </h3>
 				<div class="contact-group">
-					<div class="contact-item">
+					<div class="contact-item adress">
 						<h4> Адрес </h4>
 						<a class="link" href="https://yandex.by/maps/-/COVWF4-V" target="_blank"> г. Нижний Новгород <br>
 							ул. Строкина, д.5А</a>
 					</div>
-					<div class="contact-item">
+					<div class="contact-item telefon ">
 						<h4> Телефон </h4>
 						<a class="link" href="tel:78319998877"> +7 (831) 887-50-50 </a>
 					</div>
-					<div class="contact-item">
+					<div class="contact-item email">
 						<h4> E-mail </h4>
 						<a class="link" href="mailto:info@tarann.ru"> info@tarann.ru </a>
 					</div>
@@ -261,8 +264,8 @@
 				src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa551bb384cfb2d9ae8963834c94a18dc361fb55aecc1555bdef7625a48443083&amp;source=constructor"
 				width="100%" height="390" frameborder="0">
 			</iframe>
-		</section> -->
-		<section class="consultation">
+		</section>
+		<section id="consultation" class="consultation" >
 			<div class="consultation-cont container">
 				<div class="form-cont">
 					<h3> Нужна консультация? </h3>
@@ -303,7 +306,7 @@
 							fill="#62AF33" />
 						<path d="M13.8282 8.12438L12.5282 5.29663L9.69903 6.59725L10.999 9.425L13.8282 8.12438Z" fill="#ED6D11" />
 					</svg>
-					<h2 class="company-name "> ТАРА-НН </h1>
+					<p class="company-name "> ТАРА-НН </p>
 				</a>
 				<ul class="footer-list">
 					<div class="li-flex-cont cont-1">
@@ -327,12 +330,14 @@
 				</div>
 				<div class="footer-contact">
 					<a href="tel:78319998877" class="phone-number link footer-tel"> +7 (831) 999-88-77 </a>
-					<a href="" class="btn"> Напишите нам </a>
+					<a href="#consultation" class="btn"> Напишите нам </a>
 				</div>
 			</div>
 		</div>
 
 	</footer>
+
+	<script src="./script.js"></script>
 </body>
 
 </html>
