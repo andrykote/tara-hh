@@ -714,6 +714,11 @@ header {
 	position: relative;
 }
 
+.iframe-map {
+	width: 100%;
+	border: none;
+}
+
 .contact-info {
 	position: absolute;
 	z-index: 1;
