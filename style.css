@@ -5,7 +5,6 @@
 
 * {
 	box-sizing: border-box;
-	transition: all, .35s ;
 }
 
 html,
@@ -312,7 +311,6 @@ header {
 	display: block;
 	text-transform: uppercase;
 	color: #fff;
-	font-family: Museo Sans Cyrl;
 	font-size: 12px;
 	line-height: 14px;
 	letter-spacing: .3px;
@@ -513,7 +511,6 @@ header {
 .info-discription {
 	display: inline-block;
 	margin-bottom: 20px;
-	font-family: Museo Sans Cyrl;
 	font-size: 14px;
 	line-height: 18px;
 }
@@ -699,7 +696,7 @@ header {
 	}
 }
 
-.contact h3 {
+.contact h2 {
 	margin-left: 20px;
 	margin-bottom: 48px;
 	font-size: 32px;
@@ -799,7 +796,7 @@ header {
 	color: #fff;
 }
 
-.form-cont h3 {
+.form-cont h2 {
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 38px;
@@ -941,11 +938,15 @@ footer .container {
 	margin-bottom: 40px;
 }
 
+.footer-logo {
+	margin-right: 153px;
+}
+
 .footer-list {
 	display: flex;
 	justify-content: space-between;
 	list-style-type: none;
-	width: calc(100% - 167px);
+	flex-grow: 1;
 	
 }
 
@@ -953,7 +954,6 @@ footer .container {
 	display: flex;
 	justify-content: space-around;
 	align-content: center;
-	width: calc(100% /2);
 }
 
 .footer-list a,
@@ -992,12 +992,19 @@ footer a:hover {
 	.copyright {
 		margin-right: 10px;
 	}
+
+	.footer-logo {
+		margin-right: 72px;
+	}
 }
 
 @media (max-width: 767px) {
+	.footer-logo {
+		margin-right: 36px;
+	}
 	.footer-list {
-		width: 100%;
-		flex-direction: column;
+		flex-wrap: wrap;
+		flex-shrink: 1;
 	}
 
 	.li-flex-cont {
